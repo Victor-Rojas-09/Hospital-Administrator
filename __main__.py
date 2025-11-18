@@ -5,7 +5,7 @@ import sys
 from PyQt6.QtWidgets import QApplication
 
 from controller.hospital_controller import HospitalController
-from ui.main_window import MainWindow
+from GUI.main_window import MainWindow
 
 
 def main():
