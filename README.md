@@ -7,18 +7,18 @@ Este es un proyecto de aplicación de escritorio para la administración simple 
 El proyecto está organizado en una arquitectura de 3 capas, facilitando el mantenimiento y la escalabilidad.
 
 ---
-* ** `model`:**
+*  `model`:
     * Contiene las clases de negocio puras: `Hospital` y `Doctor`.
     * Estas clases no saben nada del controlador ni de la interfaz.
     * Utiliza **propiedades (`@property`)** para implementar Getters y Setters, encapsulando los atributos (ej: `_nombre`) y permitiendo un acceso limpio (ej: `doctor.nombre`).
 
-* ** `controller` :**
+*  `controller` :
     * Es el "cerebro" de la aplicación. Contiene toda la **lógica de negocio**.
     * Valida los datos (ej: que el DNI no esté vacío o duplicado).
     * Es el único que tiene permitido **manipular el modelo**. La vista *nunca* toca el modelo directamente.
     * El `HospitalController` no sabe que existe una interfaz gráfica; solo recibe órdenes y devuelve resultados.
 
-* ** `ui` :**
+*  `ui` :
     * Es la capa de presentación. Su única responsabilidad es **mostrar datos** y **capturar la entrada** del usuario.
     * El archivo `ui/main_window.py` contiene las clases `MainWindow` y `OutputWindow`.
     * Estas clases usan la función `loadUi()` de PyQt6 para **cargar dinámicamente** los archivos `.ui` de la carpeta `ui_form_QT`.
