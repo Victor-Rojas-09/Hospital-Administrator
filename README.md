@@ -18,7 +18,7 @@ El proyecto está organizado en una arquitectura de 3 capas, facilitando el mant
     * Es el único que tiene permitido **manipular el modelo**. La vista *nunca* toca el modelo directamente.
     * El `HospitalController` no sabe que existe una interfaz gráfica; solo recibe órdenes y devuelve resultados.
 
-*  `ui` :
+*  `GUI` :
     * Es la capa de presentación. Su única responsabilidad es **mostrar datos** y **capturar la entrada** del usuario.
     * El archivo `ui/main_window.py` contiene las clases `MainWindow` y `OutputWindow`.
     * Estas clases usan la función `loadUi()` de PyQt6 para **cargar dinámicamente** los archivos `.ui` de la carpeta `ui_form_QT`.
