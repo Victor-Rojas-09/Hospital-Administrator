@@ -1,6 +1,6 @@
 # Sistema de Administración Hospitalaria
 
-Este es un proyecto de aplicación de escritorio para la administración simple de hospitales y doctores, desarrollado en Python con PyQt6. El proyecto sigue una arquitectura estricta de 3 capas (Modelo, Controlador, Vista) y aplica buenas prácticas de POO y SOLID.
+Este es un proyecto de aplicación de escritorio para la administración simple de hospitales y doctores, desarrollado en Python con PyQt6. El proyecto sigue una arquitectura estricta de 3 capas (Modelo, Controlador, Vista).
 
 ## Estructura del Proyecto
 
