@@ -1,19 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>655</width>
-    <height>353</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Dialog</string>
-  </property>
- </widget>
- <resources/>
- <connections/>
+    <class>Form</class>
+    <widget class="QWidget" name="Form">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>500</width>
+                <height>600</height>
+            </rect>
+        </property>
+
+        <property name="windowTitle">
+            <string>Sistema Hospitalario</string>
+        </property>
+
+        <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+                <widget class="QGroupBox" name="groupBox">
+                    <property name="title">
+                        <string>Administración del Hospital</string>
+                    </property>
+
+                    <layout class="QFormLayout" name="formLayout">
+                        <item row="0" column="0">
+                            <widget class="QLabel" name="label">
+                                <property name="text">
+                                    <string>Nombre Hospital:</string>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item row="0" column="1">
+                            <widget class="QLineEdit" name="hospital_name_input"/>
+                        </item>
+
+                        <item row="1" column="1">
+                            <widget class="QPushButton" name="hospital_create_button">
+                                <property name="text">
+                                    <string>Crear/Actualizar Hospital</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+
+            <item>
+                <widget class="QGroupBox" name="groupBox_2">
+                    <property name="title">
+                        <string>Registro de Doctor</string>
+                    </property>
+
+                    <layout class="QFormLayout" name="formLayout_2">
+                        <item row="0" column="0">
+                            <widget class="QLabel" name="label_2">
+                                <property name="text">
+                                    <string>DNI:</string>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item row="0" column="1">
+                            <widget class="QLineEdit" name="doc_dni_input"/>
+                        </item>
+
+                        <item row="1" column="0">
+                            <widget class="QLabel" name="label_3">
+                                <property name="text">
+                                    <string>Nombre:</string>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item row="1" column="1">
+                            <widget class="QLineEdit" name="doc_name_input"/>
+                        </item>
+
+                        <item row="2" column="0">
+                            <widget class="QLabel" name="label_4">
+                                <property name="text">
+                                    <string>Especialidad:</string>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item row="2" column="1">
+                            <widget class="QLineEdit" name="doc_spec_input"/>
+                        </item>
+
+                        <item row="3" column="1">
+                            <widget class="QPushButton" name="add_doctor_button">
+                                <property name="text">
+                                    <string>Agregar Doctor</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+
+            <item>
+                <widget class="QGroupBox" name="groupBox_3">
+                    <property name="title">
+                        <string>Búsqueda y Resultados</string>
+                    </property>
+
+                    <layout class="QVBoxLayout" name="verticalLayout_2">
+
+                        <item>
+                            <layout class="QFormLayout" name="formLayout_3">
+                                <item row="0" column="0">
+                                    <widget class="QLabel" name="label_5">
+                                        <property name="text">
+                                            <string>Buscar por DNI:</string>
+                                        </property>
+                                    </widget>
+                                </item>
+
+                                <item row="0" column="1">
+                                    <widget class="QLineEdit" name="search_dni_input"/>
+                                </item>
+
+                                <item row="1" column="1">
+                                    <widget class="QPushButton" name="search_button">
+                                        <property name="text">
+                                            <string>Buscar</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </item>
+
+                        <item>
+                            <widget class="QTableWidget" name="tabla_resultados">
+                                <property name="editTriggers">
+                                    <set>QAbstractItemView::NoEditTriggers</set>
+                                </property>
+
+                                <column>
+                                    <property name="text">
+                                        <string>DNI</string>
+                                    </property>
+                                </column>
+
+                                <column>
+                                    <property name="text">
+                                        <string>Nombre</string>
+                                    </property>
+                                </column>
+
+                                <column>
+                                    <property name="text">
+                                        <string>Especialidad</string>
+                                    </property>
+                                </column>
+
+                                <column>
+                                    <property name="text">
+                                        <string>Hospital</string>
+                                    </property>
+                                </column>
+                            </widget>
+                        </item>
+
+                    </layout>
+                </widget>
+            </item>
+
+        </layout>
+    </widget>
+
+    <resources/>
+    <connections/>
 </ui>
