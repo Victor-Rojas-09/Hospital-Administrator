@@ -1,10 +1,10 @@
 import sys
 from PyQt6.QtWidgets import (
     QWidget, QTableWidgetItem, QHeaderView, QApplication,
-    QDialog, QLabel, QDialogButtonBox, QStyle
+    QDialog, QLabel, QDialogButtonBox, QStyle, QTableWidget
 )
-from PyQt6.QtGui import QPixmap  # Para manejar los iconos
-from PyQt6.uic import loadUi  # La función clave para cargar .ui
+from PyQt6.QtGui import QPixmap  # Para los iconos
+from PyQt6.uic import loadUi
 from PyQt6.QtCore import Qt
 
 # Importamos el controlador desde su módulo
@@ -37,7 +37,7 @@ class OutputWindow(QDialog):
         self.setWindowTitle(titulo)
         self.message_label.setText(mensaje)
 
-        # Seleccionar icono estándar del sistema (como en tus ejemplos)
+        # Seleccionar icono estándar del sistema
         if tipo == "exito":
             pixmap = self.style().standardPixmap(QStyle.StandardPixmap.SP_MessageBoxInformation)
         elif tipo == "error":
@@ -55,7 +55,7 @@ class MainWindow(QWidget):
     def __init__(self, controller: HospitalController):
         super().__init__()
 
-        # Dependencias (SOLID)
+        # Dependencias
         self._controller = controller
 
         # Carga del archivo .ui
@@ -79,7 +79,7 @@ class MainWindow(QWidget):
         """
         Configuraciones iniciales de la tabla de resultados.
         """
-        # Asumiendo que el QTableWidget en tu .ui se llama 'tabla_resultados'
+        # Se llama a 'tabla_resultados'
         self.tabla_resultados.setColumnCount(4)
         self.tabla_resultados.setHorizontalHeaderLabels(
             ["DNI", "Nombre", "Especialidad", "Hospital"]
@@ -120,19 +120,19 @@ class MainWindow(QWidget):
         """
         Toma los datos del doctor y los pasa al controlador.
         """
-        # 1. La VISTA lee los datos
+        # 1. Lee los datos
         dni = self.doc_dni_input.text()
         nombre = self.doc_name_input.text()
         especialidad = self.doc_spec_input.text()
 
-        # 2. La VISTA le pasa los datos al CONTROLADOR
+        # 2. Le pasa los datos al CONTROLADOR
         exito, mensaje = self._controller.agregar_doctor(dni, nombre, especialidad)
 
-        # 3. La VISTA muestra el resultado
+        # 3. Muestra el resultado
         self.mostrar_dialogo("Agregar Doctor", mensaje, "exito" if exito else "error")
 
         if exito:
-            # Limpiar campos tras éxito (buena práctica de UX)
+            # Limpiar campos tras éxito
             self.doc_dni_input.clear()
             self.doc_name_input.clear()
             self.doc_spec_input.clear()
@@ -162,7 +162,7 @@ class MainWindow(QWidget):
 
     def mostrar_dialogo(self, titulo: str, mensaje: str, tipo: str = "info"):
         """
-        Función helper para mostrar el diálogo de feedback personalizado.
+        Función para mostrar el diálogo de feedback personalizado.
         """
         dialogo = OutputWindow(self)
 
